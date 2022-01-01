@@ -12,10 +12,10 @@ CORS(app)
 def detect_emptions():
         body = request.get_json()
 
-        for news in body["corpus"]:
-            emotionsDict = te.get_emotion(news["title"])
-            print(emotionsDict)
 
-        return jsonify(
-            body
+        for count, news in enumerate(body["corpus"]):
+            body["corpus"][count]["emotions"] = te.get_emotion(news["title"]);
+
+        return jsonify( 
+            body["corpus"]
         )
