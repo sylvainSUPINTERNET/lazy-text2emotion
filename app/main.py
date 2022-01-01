@@ -3,6 +3,24 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import nltk
 
+# https://www.geeksforgeeks.org/deploy-python-flask-app-on-heroku/
+
+
+# Example payload
+# {
+#     "corpus": [
+#         {
+#             "title": "Covid-19 : quelles sont les restrictions sanitaires mises en place à l'étranger ?"
+#         },
+#         {
+#             "title": "Covid-19 en France : le variant Omicron, une menace pour l'hôpital ? • FRANCE 24"
+#         },
+#         {
+#             "title": "happy new year 2022"
+#         }
+#     ]
+# }
+
 nltk.download('omw-1.4')
 
 app = Flask(__name__)
