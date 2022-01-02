@@ -32,7 +32,7 @@ def detect_emptions():
 
         for keyMedia in body.keys():
             for count, news in enumerate(body[keyMedia]):
-                body[keyMedia][count]["emotions"] = te.get_emotion(news["title"]);
+                body[keyMedia][count]["emotions"] = te.get_emotion(news["description"]);
         
         
         return jsonify( 
